@@ -56,10 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (cookieConsent) {
             console.log("Displaying cookie consent banner");
             cookieConsent.style.display = "block";
-            document.getElementById("acceptCookies").addEventListener("click", function() {
-                setCookie("cookiesAccepted", "true", 10);
-                cookieConsent.style.display = "none";
-            });
         } else {
             console.log("Cookie consent element not found");
         }
@@ -84,8 +80,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById('rejectAll').addEventListener('click', function () {
-        setCookie("cookiesAccepted", "false", 10);
+        setCookie("cookiesAccepted", "true", 10);
         document.getElementById('preferencesPanel').style.display = 'none';
+        document.getElementById('cookieConsent').style.display = 'none';
+    });
+
+    // Gestione clic sul pulsante "Rifiuta" nel cookie banner
+    document.getElementById('rejectCookies').addEventListener('click', function () {
+        setCookie("cookiesAccepted", "true", 10);
+        document.getElementById('cookieConsent').style.display = 'none';
+    });
+
+    // Gestione clic sul pulsante "Accetta" nel cookie banner
+    document.getElementById('acceptCookies').addEventListener('click', function () {
+        setCookie("cookiesAccepted", "true", 10);
         document.getElementById('cookieConsent').style.display = 'none';
     });
 });
