@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function getCookie(name) {
         const nameEQ = name + "=";
         const ca = document.cookie.split(';');
-        for(let i = 0; i < ca.length; i++) {
+        for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
             while (c.charAt(0) === ' ') c = c.substring(1, c.length);
             if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
@@ -51,14 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Verifica se il cookie di consenso è già stato impostato
     const cookiesAccepted = getCookie("cookiesAccepted");
     console.log(`cookiesAccepted: ${cookiesAccepted}`);
-    if (cookiesAccepted !== "true") {
-        var cookieConsent = document.getElementById("cookieConsent");
-        if (cookieConsent) {
-            console.log("Displaying cookie consent banner");
-            cookieConsent.style.display = "block";
-        } else {
-            console.log("Cookie consent element not found");
-        }
+    if (cookiesAccepted === "true") {
+        console.log("Cookie consent has already been accepted. Hiding the cookie banner.");
+        document.getElementById('cookieConsent').style.display = 'none';
+    } else {
+        console.log("Cookie consent not accepted yet. Displaying the cookie banner.");
+        document.getElementById('cookieConsent').style.display = 'block';
     }
 
     // Mostra il pannello delle preferenze quando si clicca su "Scopri di più e personalizza"
@@ -80,14 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById('rejectAll').addEventListener('click', function () {
-        setCookie("cookiesAccepted", "true", 10);
+        setCookie("cookiesAccepted", "false", 10);
         document.getElementById('preferencesPanel').style.display = 'none';
         document.getElementById('cookieConsent').style.display = 'none';
     });
 
     // Gestione clic sul pulsante "Rifiuta" nel cookie banner
     document.getElementById('rejectCookies').addEventListener('click', function () {
-        setCookie("cookiesAccepted", "true", 10);
+        setCookie("cookiesAccepted", "false", 10);
         document.getElementById('cookieConsent').style.display = 'none';
     });
 
