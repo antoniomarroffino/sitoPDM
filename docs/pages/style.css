@@ -709,6 +709,7 @@ input[type=submit]:hover {
     cursor: pointer;
     font-size: 14px;
 }
+
 .button-group {
     display: flex; /* Dispone i pulsanti in linea orizzontale */
 }
@@ -732,7 +733,69 @@ input[type=submit]:hover {
     flex-direction: column;
 }
 
+/* Stile per la sezione dei cookie necessari */
+.required-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.required-section h3 {
+    margin: 10px 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: not-allowed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
+    left: 4px;
+    bottom: 4px;
+}
+
+input:checked + .slider {
+    background-color: #a5d6a7; /* Verde chiaro */
+}
+
+input:disabled + .slider {
+    cursor: not-allowed;
+    background-color: #a5d6a7; /* Verde chiaro */
+}
+
+input:checked:disabled + .slider:before {
+    transform: translateX(26px);
+    background-color: white;
+}
+
 #preferencesPanel h2 {
+    font-size: 40px;
     margin: 0;
 }
 
@@ -773,8 +836,6 @@ input[type=submit]:hover {
     cursor: pointer;
     color: #888;
 }
-
-
 
 
 .rejectCookies {
@@ -842,7 +903,7 @@ input[type=submit]:hover {
     background-color: #ffffff;
     border-radius: 8px;
     width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Stile per il contenuto dell'iframe */
