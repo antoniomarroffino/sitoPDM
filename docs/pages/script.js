@@ -10,7 +10,6 @@ function closeNav() {
 
 function initGTM() {
     console.log("GTM initialized");
-    // Inizializza Google Tag Manager qui se necessario
 }
 
 function initGTMOnEvent(e) {
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Displaying cookie consent banner");
             cookieConsent.style.display = "block";
             document.getElementById("acceptCookies").addEventListener("click", function() {
-                setCookie("cookiesAccepted", "true", 10); // Imposta il cookie per 10 minuti
+                setCookie("cookiesAccepted", "true", 10);
                 cookieConsent.style.display = "none";
             });
         } else {

@@ -62,17 +62,17 @@
 </main>
 
 <div id="cookieConsent" style="display: none">
-    <aside style="background-color: #8fa885; padding: 5px; margin: 0; width: 100%">
-        <div id="cookieConsentContainer" style="align-content: center">
-            <p>Questo sito utilizza cookie per migliorare l'esperienza utente. Continuando la navigazione accetti il
-                loro uso.
-            </p>
-            <p>
-                Maggiori informazioni al seguente link: <a href="privacy_cookie_policy.html" style="color:black">Privacy e cookie policy</a>
-            </p>
-            <button id="acceptCookies">Accetto</button>
+    <div id="cookieConsentContainer"
+         style="align-content: center; display: flex; flex-direction: column; align-items: center;">
+        <p>Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi liberamente assumere, rifiutare o revocare il tuo consenso, in qualsiasi momento, accedendo al pannello delle preferenze. Il rifiuto del consenso può rendere non disponibili le relative funzioni.
+
+            Utilizzare il pulsante “Accetta” per acconsentire. </p>
+
+        <div class="buttons">
+            <a href="privacy_cookie_policy.html" class="rejectCookies">Scopri di più e personalizza</a>
+            <button class="acceptCookies" id="acceptCookies">Accetta</button>
         </div>
-    </aside>
+    </div>
 </div>
 <footer>
     <p class="piedi">
