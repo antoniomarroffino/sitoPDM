@@ -23,7 +23,6 @@ document.body.appendChild(aosGo);
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded and parsed");
-    AOS.init();
 
     // Funzione per impostare un cookie
     function setCookie(name, value, minutes) {
@@ -65,7 +64,33 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Cookie consent element not found");
         }
     }
+
+    // Mostra il pannello delle preferenze quando si clicca su "Scopri di più e personalizza"
+    document.getElementById('showCookieConsent').addEventListener('click', function (event) {
+        event.preventDefault(); // Previene l'azione predefinita del link
+        document.getElementById('preferencesPanel').style.display = 'flex';
+    });
+
+    // Chiude il pannello delle preferenze quando si clicca sulla "X"
+    document.getElementById('closePreferencesPanel').addEventListener('click', function () {
+        document.getElementById('preferencesPanel').style.display = 'none';
+    });
+
+    // Gestione clic sui bottoni del pannello delle preferenze
+    document.getElementById('acceptAll').addEventListener('click', function () {
+        setCookie("cookiesAccepted", "true", 10);
+        document.getElementById('preferencesPanel').style.display = 'none';
+        document.getElementById('cookieConsent').style.display = 'none';
+    });
+
+    document.getElementById('rejectAll').addEventListener('click', function () {
+        setCookie("cookiesAccepted", "false", 10);
+        document.getElementById('preferencesPanel').style.display = 'none';
+        document.getElementById('cookieConsent').style.display = 'none';
+    });
 });
+
+
 
 document.addEventListener("scroll", initGTMOnEvent);
 document.addEventListener("mousemove", initGTMOnEvent);

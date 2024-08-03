@@ -155,17 +155,34 @@
     </section>
 </main>
 
-<div id="cookieConsent" style="display: none">
-    <div id="cookieConsentContainer"
-         style="align-content: center; display: flex; flex-direction: column; align-items: center;">
-        <p>Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi liberamente assumere, rifiutare o revocare il tuo consenso, in qualsiasi momento, accedendo al pannello delle preferenze. Il rifiuto del consenso può rendere non disponibili le relative funzioni.
+<!-- Pannello delle preferenze -->
+<div id="preferencesPanel">
+    <button class="close-button" id="closePreferencesPanel">&times;</button>
+    <h2>Le tue preferenze relative alla privacy</h2>
+    <p>
+        Questo pannello ti permette di esprimere alcune preferenze relative al trattamento delle tue informazioni personali.
+        Puoi rivedere e modificare le tue scelte in qualsiasi momento accedendo al presente pannello tramite l’apposito link.
+        Per rifiutare il tuo consenso alle attività di trattamento descritte di seguito, disattiva i singoli comandi o utilizza il pulsante “Rifiuta tutto” e conferma di voler salvare le scelte effettuate.
+    </p>
+    <div class="buttons">
+        <button class="reject-button" id="rejectAll">Rifiuta tutto</button>
+        <button class="accept-button" id="acceptAll">Accetta tutto</button>
+    </div>
+</div>
 
-            Utilizzare il pulsante “Accetta” per acconsentire. </p>
-
+<!-- Cookie banner -->
+<div id="cookieConsent">
+    <div id="cookieConsentContainer">
+        <p>Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi liberamente assumere, rifiutare o
+            revocare il tuo consenso, in qualsiasi momento, accedendo al pannello delle preferenze. Il rifiuto del
+            consenso può rendere non disponibili le relative funzioni.
+            Utilizzare il pulsante “Accetta” per acconsentire.</p>
         <div class="buttons">
-            <a href="privacy_cookie_policy.html" class="rejectCookies">Scopri di più e personalizza</a>
-            <button class="acceptCookies" id="acceptCookies">Accetta</button>
-            <button class="acceptCookies" id="">Rifiuta</button>
+            <a href="#" id="showCookieConsent" class="rejectCookies">Scopri di più e personalizza</a>
+            <div class="button-group">
+                <button class="acceptCookies" id="acceptCookies">Accetta</button>
+                <button class="acceptCookies" id="rejectCookies">Rifiuta</button>
+            </div>
         </div>
     </div>
 </div>

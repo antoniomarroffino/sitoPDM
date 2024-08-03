@@ -709,8 +709,76 @@ input[type=submit]:hover {
     cursor: pointer;
     font-size: 14px;
 }
+.button-group {
+    display: flex; /* Dispone i pulsanti in linea orizzontale */
+}
+
+/* Stile per il pannello delle preferenze */
+#preferencesPanel {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10000; /* Assicurati che sia sopra ad altri elementi */
+    max-width: 90vw; /* Imposta una larghezza massima per il pannello */
+    max-height: 90vh; /* Imposta un'altezza massima per il pannello */
+    overflow-y: auto; /* Abilita lo scroll verticale se necessario */
+    flex-direction: column;
+}
+
+#preferencesPanel h2 {
+    margin: 0;
+}
+
+#preferencesPanel p {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#preferencesPanel .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#preferencesPanel button {
+    margin: 5px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#preferencesPanel .reject-button {
+    background-color: #f44336;
+}
+
+#preferencesPanel .accept-button {
+    background-color: #4CAF50;
+}
+
+#preferencesPanel .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+}
+
+
+
 
 .rejectCookies {
+    margin-right: auto;
     background-color: #333;
     color: #fff;
     text-decoration: none;
@@ -763,4 +831,79 @@ input[type=submit]:hover {
     border: 0;
     margin: 20px auto;
     z-index: 1;
+}
+
+#iubenda-iframe {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    z-index: 100000000 !important;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Stile per il contenuto dell'iframe */
+#iubenda-iframe-content {
+    padding: 20px;
+    color: #333;
+}
+
+/* Stile per la sezione intestazione */
+.purposes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.purposes-header-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Stile per i pulsanti */
+.iub-btn {
+    background-color: #1CC691;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.iub-btn-reject {
+    background-color: #ff4d4d;
+}
+
+.iub-btn-accept {
+    background-color: #1CC691;
+}
+
+/* Stile per il testo */
+.purposes-header-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.purposes-content {
+    margin-top: 10px;
+}
+
+.purposes-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.purposes-section {
+    margin-top: 20px;
+}
+
+.purposes-section-header {
+    margin-bottom: 10px;
 }
