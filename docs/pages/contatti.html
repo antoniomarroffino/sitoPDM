@@ -58,65 +58,14 @@
     </a>
 </section>
 <main class="mainContact" id="recapiti">
-    <section class="sezPadR">
+    <section class="">
         <h2 data-aos="fade-up">I nostri contatti</h2>
-        <p data-aos="fade-right">Compila il modulo oppure invia una email a:<br>info@pdmindustriale.com<br><br>
-            Il nostro numero di telefono:<br>[+39] 0313542997<br><br>
+        <p data-aos="fade-right">Se hai bisogno di ulteriori informazioni, puoi contatarci al seguente indirizzo email:<br>info@pdmindustriale.com<br><br>
+            Oppure al nostro numero di telefono:<br>[+39] 0313542997<br><br>
 
         </p>
     </section>
-    <section class="sezPadL">
-        <h3 data-aos="fade-up">Compila il modulo per ulteriori info</h3>
-        <p class="rosso"></p>
-        <form id="contactForm" method="post">
-            <div data-aos="fade-up">
-                <label for="nome">Nome e Cognome</label><br>
-                <input name="nome" type="text" required="required" id="nome">
-            </div>
-            <div data-aos="fade-up">
-                <label for="email">La tua email</label><br>
-                <input name="email" type="email" required="required" id="email">
-            </div>
-            <div data-aos="fade-up">
-                <label for="oggetto">Oggetto</label><br>
-                <input name="oggetto" type="text" id="oggetto">
-            </div>
-            <div data-aos="fade-up">
-                <label for="messaggio">Messaggio</label><br>
-                <textarea name="messaggio" id="messaggio"></textarea>
-            </div>
-            <div data-aos="fade-up">
-                <input style="background-color: #8fa885" type="submit" value="INVIA">
-            </div>
-            <p>Inviando questo modulo acconsenti al trattamento dei tuoi dati personali (n. 679/2016, GDPR).</p>
-        </form>
-        <div id="formMessage"></div>
 
-        <script>
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                const formData = new FormData(this);
-                fetch('submit.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        const formMessage = document.getElementById('formMessage');
-                        if (data.success) {
-                            formMessage.innerHTML = `<p style="color: green;">${data.message}</p>`;
-                        } else {
-                            formMessage.innerHTML = `<p style="color: red;">${data.message}</p>`;
-                        }
-                    })
-                    .catch(error => {
-                        document.getElementById('formMessage').innerHTML = `<p style="color: red;">Si è verificato un errore durante l'invio del messaggio.</p>`;
-                    });
-            });
-        </script>
-
-    </section>
 </main>
 
 <!-- Pannello delle preferenze -->
