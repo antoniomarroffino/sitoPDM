@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 document.addEventListener("scroll", initGTMOnEvent);
 document.addEventListener("mousemove", initGTMOnEvent);
 document.addEventListener("touchstart", initGTMOnEvent);
@@ -107,3 +106,31 @@ document.addEventListener("mousedown", initGTMOnEvent);
 document.addEventListener("touchcancel", initGTMOnEvent);
 document.addEventListener("keydown", initGTMOnEvent);
 window.addEventListener("resize", initGTMOnEvent);
+
+
+const images = document.querySelectorAll('.clickable-img');
+
+// Seleziona gli elementi del lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+
+// Aggiungi un listener per ciascuna immagine
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = img.src;
+    });
+});
+
+// Chiudi il lightbox quando si clicca sulla "x"
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// Chiudi il lightbox quando si clicca fuori dall'immagine
+lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+        lightbox.style.display = 'none';
+    }
+});
