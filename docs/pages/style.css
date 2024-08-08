@@ -341,7 +341,7 @@ h5 a:hover {
 
 main {
     width: 90%;
-    padding: 125px 5%;
+    padding: 75px 5%;
     max-width: 850px;
     margin: auto;
     height: auto;
@@ -407,7 +407,7 @@ main article div {
 
 aside {
     width: 90%;
-    padding: 50px 5%;
+    padding: 30px 5%;
     height: auto;
     overflow: hidden;
     text-align: center;
@@ -967,4 +967,8 @@ input:checked:disabled + .slider:before {
 
 .purposes-section-header {
     margin-bottom: 10px;
+}
+
+.title-link {
+    color: #8fa885;
 }
