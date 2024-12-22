@@ -423,10 +423,11 @@ aside section {
 
 aside section article {
     float: left;
-    margin: 2%;
+    margin: 1% 2%;
     padding: 1%;
     width: calc(82% / 3);
-    background-color: #fff
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 aside section article a {
@@ -441,6 +442,7 @@ aside section article img {
     max-width: 650px;
     max-height: 440px;
     display: block;
+    border-radius: 20px;
     transition: transform .2s
 }
 
